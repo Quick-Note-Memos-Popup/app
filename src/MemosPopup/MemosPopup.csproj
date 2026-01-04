@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <ApplicationIcon>app-icon.ico</ApplicationIcon>
+    <AssemblyName>QuickNote</AssemblyName>
+    <Product>Quick Note</Product>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Resource Include="app-icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MemosPopup.Core\MemosPopup.Core.csproj" />
+    <ProjectReference Include="..\Plugins\MemosPopup.Plugins.AddMemo\MemosPopup.Plugins.AddMemo.csproj" />
+    <ProjectReference Include="..\Plugins\MemosPopup.Plugins.ListMemos\MemosPopup.Plugins.ListMemos.csproj" />
+  </ItemGroup>
+
+</Project>

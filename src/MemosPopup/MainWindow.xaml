@@ -1,0 +1,47 @@
+<Window x:Class="MemosPopup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Quick Note"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize"
+        Width="72"
+        Height="72"
+        Left="100"
+        Top="100">
+    
+    <Grid x:Name="MainGrid">
+        <!-- Overlay background when menu is open -->
+        <Border x:Name="OverlayBackground" 
+                Background="Transparent"
+                Visibility="Collapsed"
+                MouseLeftButtonDown="OverlayBackground_MouseLeftButtonDown"/>
+        
+        <!-- Main FAB Button -->
+        <Button x:Name="MainFabButton"
+                Style="{StaticResource FabButtonStyle}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                PreviewMouseLeftButtonDown="MainFabButton_PreviewMouseLeftButtonDown"
+                PreviewMouseMove="MainFabButton_PreviewMouseMove"
+                PreviewMouseLeftButtonUp="MainFabButton_PreviewMouseLeftButtonUp">
+            <Grid>
+                <TextBlock x:Name="FabIcon" 
+                           Text="+" 
+                           FontSize="28" 
+                           FontWeight="Light"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"
+                           Margin="0,-2,0,0"
+                           RenderTransformOrigin="0.5,0.5">
+                    <TextBlock.RenderTransform>
+                        <RotateTransform x:Name="FabIconRotation" Angle="0"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
+            </Grid>
+        </Button>
+    </Grid>
+</Window>
